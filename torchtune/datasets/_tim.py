@@ -9,14 +9,14 @@ from functools import partial
 from torchtune.data import AlpacaInstructTemplate
 from torchtune.datasets._instruct import InstructDataset
 from torchtune.modules.tokenizers import Tokenizer
-from datasets import DownloadConfig
 
 
 def tim_dataset(
     tokenizer: Tokenizer,
-    source: str = "./train.json",
+    source: str = "json",
     train_on_input: bool = True,
     max_seq_len: int = 512,
+    data_files: str = "./train.json",
 ) -> InstructDataset:
     """
     Support for family of Alpaca-style datasets from Hugging Face Datasets using
@@ -51,9 +51,8 @@ def tim_dataset(
         train_on_input=train_on_input,
         max_seq_len=max_seq_len,
         split="train",
-        data_dir=".",
-        download_config=DownloadConfig(local_files_only=True)
+        data_files=data_files,
     )
 
 
-tim_dataset_small = partial(tim_dataset, source="./train-small.json")
+tim_dataset_small = partial(tim_dataset, data_files="./train-small.json")
