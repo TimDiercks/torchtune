@@ -13,7 +13,7 @@ from torchtune.modules.tokenizers import Tokenizer
 
 def tim_dataset(
     tokenizer: Tokenizer,
-    source: str = "train.json",
+    source: str = "./train.json",
     train_on_input: bool = True,
     max_seq_len: int = 512,
 ) -> InstructDataset:
@@ -53,4 +53,4 @@ def tim_dataset(
     )
 
 
-tim_dataset_small = partial(tim_dataset, source="train-small.json")
+tim_dataset_small = partial(tim_dataset, source="./train-small.json")
