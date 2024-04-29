@@ -142,6 +142,11 @@ _ALL_RECIPES = [
         supports_distributed=False,
     ),
     Recipe(
+        name="generate_for_eval",
+        file_path="generate_for_eval.py",
+        supports_distributed=False,
+    ),
+    Recipe(
         name="eleuther_eval",
         file_path="eleuther_eval.py",
         configs=[
