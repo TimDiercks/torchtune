@@ -144,6 +144,7 @@ _ALL_RECIPES = [
     Recipe(
         name="generate_for_eval",
         file_path="generate_for_eval.py",
+        configs=[],
         supports_distributed=False,
     ),
     Recipe(
